@@ -1,0 +1,25 @@
+from sublime_plugin import TextCommand
+
+class ShiftswitchCommand(TextCommand):
+  "Abstract base class for commands."
+
+  def set_tab_size(self, ts):
+    self.view.run_command('set_setting', {"setting": 'tab_size', "value": ts})
+
+  def expand(self, use_tabs):
+    if use_tabs:
+      self.view.run_command('unexpand_tabs')
+    else:
+      self.view.run_command('expand_tabs')
+
+class ShiftswitchIndentCommand(ShiftswitchCommand):
+  def run(self, edit, ts, use_tabs):
+    self.set_tab_size(ts)
+    self.expand(use_tabs)
+
+class ShiftswitchReindentCommand(ShiftswitchCommand):
+  def run(self, edit, ts, use_tabs):
+    self.expand(True)
+    self.set_tab_size(ts);
+    if not use_tabs:
+      self.expand(False)
