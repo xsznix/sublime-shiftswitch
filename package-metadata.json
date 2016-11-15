@@ -1,8 +1,0 @@
-{
-	"sublime_text": "*",
-	"version": "1.0.0",
-	"platforms": ["*"],
-	"url": "https://github.com/xsznix/sublime-shiftswitch",
-	"description": "Commands to change indentation settings.",
-	"dependencies": []
-}
