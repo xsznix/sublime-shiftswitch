@@ -7,7 +7,7 @@ class ShiftswitchCommand(TextCommand):
     self.view.run_command('set_setting', {"setting": 'tab_size', "value": ts})
 
   def set_use_tabs(self, use_tabs):
-    self.view.run_command('set_setting', {"setting": 'translate_tabs_to_spaces', "value": True})
+    self.view.run_command('set_setting', {"setting": 'translate_tabs_to_spaces', "value": not use_tabs})
 
   def modify_use_tabs(self, use_tabs):
     if use_tabs:
