@@ -26,3 +26,4 @@ class ShiftswitchReindentCommand(ShiftswitchCommand):
     self.set_tab_size(ts);
     if not use_tabs:
       self.modify_use_tabs(False)
+      self.set_use_tabs(False)
